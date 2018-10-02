@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<body style="font-family:Helvetica;">
+
+		<form action = "http://localhost:5005/Three_alleles_result" method = "POST">
+			<h3>To find out the allele/gene frequencies and the expected genotypic frequency, please enter the frequency of various genotypes and the population size.</h3>
+			<p>Frequency of AA homozygous individuals <input type = "float" name = "AA" /></p>
+			<p>Frequency of AB heterozygous individuals <input type = "float" name = "AB" /></p>
+			<p>Frequency of BB homozygous individuals <input type = "float" name = "BB" /></p>
+			<p>Frequency of AC homozygous individuals <input type = "float" name = "AC" /></p>
+			<p>Frequency of BC heterozygous individuals <input type = "float" name = "BC" /></p>
+			<p>Frequency of CC homozygous individuals <input type = "float" name = "CC" /></p>
+			<p>Total Population Size <input type = "int" name = "Popsize" /></p>
+			<p><input type = "submit" value = "Submit" /></p>
+		</form>
+
+	</body>
+</html>

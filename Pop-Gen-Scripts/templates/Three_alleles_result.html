@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+   <head>
+      <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+      </style>
+   </head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <body style="font-family:Helvetica;">
+
+    <h3>Allele Frequency</h3>
+      <table border = 1>
+         {% for key, value in allele.iteritems() %}
+
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+
+         {% endfor %}
+      </table>
+
+    <h3>Expected Number of Individuals</h3>
+      <table border = 1>
+         {% for key, value in exp.iteritems() %}
+
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+
+         {% endfor %}
+      </table>
+
+    <h3>Observed Number of Individuals</h3>
+      <table border = 1>
+         {% for key, value in obs.iteritems() %}
+
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+
+         {% endfor %}
+      </table>
+      {% if AA or BB or CC  == 0 %}
+      <h4>The genotype with frequency 0 is lethal.Therfore, this lethal genotype is not present in the population</h4>
+      {% else %}
+      <h4>You may carry out a Chi-Square test to see if the deviation of expected number of individuals from observed number of individuals is statistically significant or not.</h4>
+      {% endif %}
+   </body>
+</html>

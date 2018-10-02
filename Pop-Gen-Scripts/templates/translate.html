@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<body style="font-family:Helvetica;">
+
+		<form action = "http://localhost:5005/translate_result" method = "POST">
+			<h3>Please enter the (exonic) DNA sequence to translate </h3>
+			<p>DNA sequence <input type = "str" name = "dna" /></p>
+			<h4>Codon Table for translating
+			<table border = 1>
+				{% for key, value in codon.items() %}
+
+					<tr>
+						<th> {{ key }} </th>
+						<td> {{ value }} </td>
+					</tr>
+
+				{% endfor %}
+			</table>
+			<p><input type = "submit" value = "Submit" /></p>
+		</form>
+
+	</body>
+</html>
